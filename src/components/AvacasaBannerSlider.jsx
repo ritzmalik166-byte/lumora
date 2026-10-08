@@ -64,7 +64,7 @@ const AvacasaBannerSlider = () => {
       </Swiper>
 
       {/* Desktop only — hidden on phone / tablet */}
-      <div className="pointer-events-none absolute inset-0 z-20 hidden lg:flex items-center justify-end pr-6 xl:pr-12 2xl:pr-16">
+      <div className="pointer-events-none absolute inset-0 z-20 hidden lg:flex items-end justify-end pr-6 xl:pr-12 2xl:pr-16 pb-4 lg:pb-4 xl:pb-6 2xl:pb-8">
         <BannerEnquiryForm />
       </div>
     </div>

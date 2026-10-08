@@ -265,7 +265,7 @@ const BannerEnquiryForm = ({
     <div
       className={`pointer-events-auto w-full max-w-[300px] sm:max-w-[340px] ${className}`}
     >
-      <div className="relative rounded-xl border border-mainText/80 bg-[#0e291a]/95 px-5 py-5 sm:px-6 sm:py-6 shadow-[0_12px_40px_rgba(0,0,0,0.35)] backdrop-blur-[2px]">
+      <div className="relative rounded-xl border border-mainText/80 bg-[#0e291a]/95 px-5 py-4 sm:px-6 sm:py-5 lg:px-5 lg:py-4 xl:px-6 xl:py-5 2xl:py-6 shadow-[0_12px_40px_rgba(0,0,0,0.35)] backdrop-blur-[2px]">
         {showClose && (
           <button
             type="button"
@@ -281,11 +281,11 @@ const BannerEnquiryForm = ({
           <SuccessTick />
         ) : (
           <form onSubmit={handleSubmit}>
-            <div className="mb-4 text-center">
-              <h2 className="font-cinzel text-[18px] sm:text-[20px] tracking-[0.12em] text-mainText uppercase">
+            <div className="mb-3 lg:mb-2.5 xl:mb-3.5 2xl:mb-4 text-center">
+              <h2 className="font-cinzel text-[17px] sm:text-[19px] xl:text-[20px] tracking-[0.12em] text-mainText uppercase">
                 Enquire Now
               </h2>
-              <div className="mx-auto mt-2 flex items-center justify-center gap-2 text-mainText">
+              <div className="mx-auto mt-1.5 xl:mt-2 flex items-center justify-center gap-2 text-mainText">
                 <span className="h-px w-8 bg-mainText/70" />
                 <svg
                   width="14"
@@ -300,11 +300,11 @@ const BannerEnquiryForm = ({
               </div>
             </div>
 
-            <div className="space-y-2.5">
+            <div className="space-y-2 lg:space-y-2 xl:space-y-2.5">
               {fields.map(({ icon: Icon, name, ...inputProps }) => (
                 <div key={name}>
                   <label
-                    className={`flex items-center gap-2.5 rounded-md bg-white px-3 py-2.5 focus-within:ring-2 focus-within:ring-mainText ${
+                    className={`flex items-center gap-2.5 rounded-md bg-white px-3 py-2 lg:py-2 xl:py-2.5 focus-within:ring-2 focus-within:ring-mainText ${
                       errors[name] ? "ring-2 ring-red-500" : ""
                     }`}
                   >
@@ -317,7 +317,7 @@ const BannerEnquiryForm = ({
                       value={formData[name]}
                       onChange={handleInputChange}
                       onBlur={name === "Phone" ? handlePhoneBlur : undefined}
-                      className="w-full min-w-0 bg-transparent text-[13px] sm:text-sm text-greenTheme placeholder:text-gray-400 outline-none"
+                      className="w-full min-w-0 bg-transparent text-[12.5px] sm:text-[13px] xl:text-sm text-greenTheme placeholder:text-gray-400 outline-none"
                       {...inputProps}
                     />
                   </label>
@@ -330,7 +330,7 @@ const BannerEnquiryForm = ({
               ))}
             </div>
 
-            <label className="mt-3.5 flex cursor-pointer items-center gap-2.5 select-none">
+            <label className="mt-2.5 lg:mt-2.5 xl:mt-3 2xl:mt-3.5 flex cursor-pointer items-center gap-2.5 select-none">
               <span className="relative flex h-[18px] w-[18px] flex-shrink-0 items-center justify-center">
                 <input
                   type="checkbox"
@@ -372,7 +372,7 @@ const BannerEnquiryForm = ({
             <button
               type="submit"
               disabled={isLoading}
-              className={`mt-4 w-full rounded-md py-3 px-4 font-poppins text-[12px] sm:text-[13px] font-semibold tracking-[0.06em] uppercase transition-all duration-300 ${
+              className={`mt-3 lg:mt-3 xl:mt-3.5 2xl:mt-4 w-full rounded-md py-2.5 lg:py-2.5 xl:py-3 px-4 font-poppins text-[12px] sm:text-[13px] font-semibold tracking-[0.06em] uppercase transition-all duration-300 ${
                 isLoading
                   ? "cursor-not-allowed bg-gray-400 text-gray-600"
                   : "bg-gradient-to-b from-[#dfb57a] to-[#cc9a64] text-greenTheme hover:from-[#e8c48c] hover:to-[#d4a874]"
