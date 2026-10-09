@@ -6,25 +6,28 @@ import BannerEnquiryForm from "./BannerEnquiryForm";
 
 const bannerSlides = [
   {
-    mobile: "/avacasa-banners/Web-Banners_green.webp",
-    tablet: "/avacasa-banners/Web-Banners_green-2.webp",
-    desktop: "/avacasa-banners/Web-Banners_green-4.webp",
+    mobile: "/avacasa-banners/new_web_banner_mobile.jpg",
+    tablet: "/avacasa-banners/new_web_banner_tablet.jpg",
+    desktop: "/avacasa-banners/new_web_banner_desktop.jpg",
     alt: "AVACASA luxury villas - slide 1",
+    type: "image/jpeg",
   },
   {
     mobile: "/avacasa-banners/Web-Banners_-light.webp",
     tablet: "/avacasa-banners/Web-Banners_light-2.webp",
     desktop: "/avacasa-banners/Web-Banners_light-4.webp",
     alt: "AVACASA luxury villas - slide 2",
+    type: "image/webp",
   },
 ];
 
 const AvacasaBannerSlider = () => {
   return (
-    <div className="relative w-full aspect-[458/810] md:aspect-[1000/1230] lg:aspect-[1920/920] bg-[#0e291a]">
+    <div className="relative w-full lg:aspect-[1920/920] bg-[#0e291a]">
       <Swiper
         modules={[Autoplay, EffectFade]}
         effect="fade"
+        autoHeight
         fadeEffect={{ crossFade: true }}
         autoplay={{
           delay: 3500,
@@ -33,30 +36,30 @@ const AvacasaBannerSlider = () => {
         }}
         loop
         speed={900}
-        className="h-full w-full [&_.swiper-wrapper]:h-full [&_.swiper-slide]:h-full"
+        className="w-full lg:h-full [&_.swiper-wrapper]:lg:h-full [&_.swiper-slide]:lg:h-full"
       >
         {bannerSlides.map((slide, index) => (
           <SwiperSlide key={slide.desktop} className="h-full w-full">
-            <picture className="flex h-full w-full items-start justify-center">
+            <picture className="block w-full">
               <source
                 media="(min-width: 1024px)"
                 srcSet={slide.desktop}
-                type="image/webp"
+                type={slide.type}
               />
               <source
                 media="(min-width: 768px)"
                 srcSet={slide.tablet}
-                type="image/webp"
+                type={slide.type}
               />
               <img
                 src={slide.mobile}
                 alt={slide.alt}
-                width={index === 0 ? 458 : undefined}
-                height={index === 0 ? 810 : undefined}
+                width={index === 0 ? 768 : undefined}
+                height={index === 0 ? 768 : undefined}
                 loading={index === 0 ? "eager" : "lazy"}
                 fetchPriority={index === 0 ? "high" : "low"}
                 decoding="async"
-                className="block w-full h-full object-contain object-top"
+                className="block w-full h-auto lg:h-full lg:object-cover lg:object-top"
               />
             </picture>
           </SwiperSlide>

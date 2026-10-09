@@ -12,23 +12,23 @@ const ProductPage = () => {
         <link
           rel="preload"
           as="image"
-          href="/avacasa-banners/Web-Banners_green.webp"
+          href="/avacasa-banners/new_web_banner_mobile.jpg"
           media="(max-width: 767px)"
-          type="image/webp"
+          type="image/jpeg"
         />
         <link
           rel="preload"
           as="image"
-          href="/avacasa-banners/Web-Banners_green-2.webp"
+          href="/avacasa-banners/new_web_banner_tablet.jpg"
           media="(min-width: 768px) and (max-width: 1023px)"
-          type="image/webp"
+          type="image/jpeg"
         />
         <link
           rel="preload"
           as="image"
-          href="/avacasa-banners/Web-Banners_green-4.webp"
+          href="/avacasa-banners/new_web_banner_desktop.jpg"
           media="(min-width: 1024px)"
-          type="image/webp"
+          type="image/jpeg"
         />
       </Head>
 
